@@ -8,3 +8,43 @@ let data = {
             "https://m.media-amazon.com/images/I/61vsWhHWc5L._AC_UF894,1000_QL80_.jpg"],
 
 }
+
+let song = new Audio
+
+window.onload = function(){
+       playSong()
+}
+
+currentSong = 0
+function playSong(){
+       song.src = data.song[currentSong]
+       songTitle = document.getElementById("songTitle")
+       songTitle.textContent = data.title[currentSong]
+
+       let img  = document.getElementsByClassName("row1")[0]
+       img.style.backgroundImage = "url(" + data.poster[currentSong] + ")"
+
+       let main  = document.getElementsByClassName("main")[0]
+       main.style.backgroundImage = "url(" + data.poster[currentSong] + ")"
+       song.play()
+}
+
+function playOrPauseSong(){
+       let play = document.getElementById("play")
+
+       if (song.paused){
+              song.play()
+              play.src = "images/pause.png"
+       }else{
+              song.pause()
+              play.src = "images/play-button-arrowhead.png"
+       }
+}
+
+song.addEventListener("timeupdate", function(){
+       let fill = document.getElementsByClassName("fill")[0]
+
+       let position = (song.currentTime/song.duration)*99
+
+       fill.style.width = position + "%"
+})
