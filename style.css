@@ -114,8 +114,8 @@ body{
 .currentTime{
     height: 100%;
     width: 50%;
-    margin-left: 35px;
-    margin-top: -27px;
+    margin-left: 25px;
+    margin-top: -50px;
     color: blue;
 
 }
@@ -124,17 +124,28 @@ body{
     width: 35px;
     height: 28px;
     background-size: cover;
-    margin: 20px;
+    margin-top: 35px;
+    margin-left:25px;
 }
 #decrease{
     width: 35px;
     height: 28px;
     background-size: cover;
-    margin: 20px;
+    margin-top: 35px;
+    margin-left:25px;
 }
 #mute{
     width: 35px;
     height: 28px;
     background-size: cover;
-    margin: 20px;
+    margin-top: 35px;
+    margin-left:25px;
 }
+.speed{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: -200px;
+}
+
+

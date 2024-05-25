@@ -146,5 +146,47 @@ let data = {
            document.removeEventListener('mousemove', setFillWidth);
        });
    });
+
+   let speed = 1.0; // Initial playback speed
+   let speed_changed = 0
+
+    function setPlaybackSpeed(newSpeed) {
+        speed = newSpeed;
+        song.playbackRate = speed;
+    }
+
+// Function to increase playback speed
+    function speedUp() {
+        if (speed < 2.0) { // Maximum speed set to 2.0
+            setPlaybackSpeed(speed + 0.1);
+            
+        }
+    }
+
+// Function to decrease playback speed
+    function speedDown() {
+        if (speed > 0.6) { // Minimum speed set to 0.5
+            setPlaybackSpeed(speed - 0.1);
+        }
+    }
+
    
+    let btn1 = document.getElementsByClassName("btnUp")
+    btn1[0].addEventListener("click",function(){
+        speedUp()
+    let sp = document.getElementsByClassName("speeding")
+        speed_changed = speed.toFixed(1)
+        sp[0].textContent = speed_changed + "x"
+    })
+
+    let btn2 = document.getElementsByClassName("btnDown")
+    btn2[0].addEventListener("click",function(){
+        speedDown()
+    let sp = document.getElementsByClassName("speeding")
+        speed_changed = speed.toFixed(1)
+        sp[0].textContent = speed_changed + "x"
+    })
+   
+
+
    
